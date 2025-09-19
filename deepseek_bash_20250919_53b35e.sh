@@ -1,0 +1,1 @@
+npm install express mongoose bcryptjs jsonwebtoken nodemailer multer cors helmet express-rate-limit compression express-validator dotenv
