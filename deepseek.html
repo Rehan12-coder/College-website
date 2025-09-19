@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayan College of Nursing and Health Sciences</title>
+  <link rel="shortcut icon" href="image/favicon.ico" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <style>
+    /* Cascading Style Sheets */
+    @font-face {
+      font-family: myFirstFont;
+      src: url(../Poppins/Poppins-Regular.ttf);
+    }
+    
+    @font-face {
+      font-family: bold;
+      src: url(../Poppins/Poppins-Bold.ttf);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: myFirstFont, Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+      cursor: default;
+    }
+    
+    /* Website Scrollerbar */
+    body::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    
+    body::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+      background-color: #3e2093;
+      border-radius: 4px;
+    }
+    
+    /* Header Styles */
+    .header {
+      min-height: 100vh;
+      width: 100%;
+      background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('image/background.jpg');
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+    
+    nav {
+      display: flex;
+      padding: 2% 6%;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    
+    nav img {
+      width: 150px;
+    }
+    
+    .nav-links {
+      flex: 1;
+      text-align: right;
+    }
+    
+    .nav-links ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+    
+    .nav-links a {
+      color: #3e2093;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    
+    .nav-links ul li::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background: #f44336;
+      display: block;
+      margin: auto;
+      transition: 0.5s;
+    }
+    
+    .nav-links ul li:hover::after {
+      width: 100%;
+    }
+    
+    .text-box {
+      width: 90%;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    
+    .text-box h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .text-box p {
+      margin: 10px 0 40px;
+      font-size: 18px;
+      color: #fff;
+    }
+    
+    .hero-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 12px 34px;
+      font-size: 16px;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.5s;
+    }
+    
+    .hero-btn:hover {
+      color: #3e2093;
+      background: #fff;
+      border: 2px solid #fff;
+    }
+    
+    .icon {
+      display: none;
+    }
+    
+    /* Course Section */
+    .course {
+      width: 80%;
+      margin: 100px auto;
+      text-align: center;
+      padding-top: 100px;
+    }
+    
+    h1 {
+      font-size: 36px;
+      font-weight: 600;
+      color: #3e2093;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      font-size: 24px;
+      color: #3e2093;
+      margin-bottom: 15px;
+    }
+    
+    h3 {
+      font-size: 20px;
+      color: #3e2093;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    .row {
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .course-col {
+      flex-basis: 31%;
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 20px 12px;
+      box-sizing: border-box;
+      transition: 0.5s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .course-col:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Campus Section */
+    .campus {
+      width: 80%;
+      margin: 100px auto;
+      text-align: center;
+      padding-top: 50px;
+    }
+    
+    .campus-col {
+      flex-basis: 32%;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .campus-col img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s;
+    }
+    
+    .layer {
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.5s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .layer:hover {
+      background: rgba(62, 32, 147, 0.7);
+    }
+    
+    .layer h3 {
+      color: #fff;
+      font-size: 26px;
+      opacity: 0;
+      transition: 0.5s;
+    }
+    
+    .layer:hover h3 {
+      opacity: 1;
+    }
+    
+    .campus-col:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* Facilities Section */
+    .facilities {
+      width: 80%;
+      margin: 100px auto;
+      text-align: center;
+      padding-top: 50px;
+    }
+    
+    .facilities-col {
+      flex-basis: 31%;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      text-align: left;
+    }
+    
+    .facilities-col img {
+      width: 100%;
+      border-radius: 10px;
+      transition: 0.5s;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .facilities-col p {
+      padding: 0;
+    }
+    
+    .facilities-col h3 {
+      margin-top: 16px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    
+    .facilities-col img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Call To Action Section */
+    .ctn {
+      margin: 100px auto;
+      width: 80%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/banner_ggu.jpg');
+      background-position: center;
+      background-size: cover;
+      border-radius: 10px;
+      text-align: center;
+      padding: 100px 0;
+      transition: 0.5s;
+    }
+    
+    .ctn h1 {
+      color: #fff;
+      margin-bottom: 40px;
+      padding: 0;
+    }
+    
+    .ctn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Footer */
+    .footer {
+      width: 100%;
+      text-align: center;
+      padding: 60px 0 30px;
+      background-color: #3e2093;
+      color: #fff;
+    }
+    
+    .footer h4 {
+      margin-bottom: 25px;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #fff;
+    }
+    
+    .footer p {
+      color: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .social-icons {
+      margin: 30px 0;
+    }
+    
+    .social-icons a {
+      color: #fff;
+      margin: 0 15px;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: #f44336;
+    }
+    
+    #copyright {
+      margin-top: 30px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* New Sections */
+    .mission-vision {
+      width: 80%;
+      margin: 100px auto;
+      text-align: center;
+    }
+    
+    .mission-vision .row {
+      align-items: stretch;
+    }
+    
+    .mission-box, .vision-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      flex-basis: 48%;
+      transition: 0.5s;
+    }
+    
+    .mission-box:hover, .vision-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .mission-box h2, .vision-box h2 {
+      color: #3e2093;
+      margin-bottom: 20px;
+    }
+    
+    .testimonials {
+      width: 80%;
+      margin: 100px auto;
+      text-align: center;
+    }
+    
+    .testimonial-col {
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 25px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: 0.5s;
+    }
+    
+    .testimonial-col:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .testimonial-col img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 15px;
+      border: 3px solid #3e2093;
+    }
+    
+    .testimonial-col p {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    
+    .testimonial-col .name {
+      font-weight: bold;
+      color: #3e2093;
+      margin-top: auto;
+    }
+    
+    .news-section {
+      width: 80%;
+      margin: 100px auto;
+      text-align: center;
+    }
+    
+    .news-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: 0.5s;
+    }
+    
+    .news-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .news-content {
+      padding: 20px;
+    }
+    
+    .news-date {
+      color: #f44336;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    .news-content h3 {
+      margin-bottom: 10px;
+    }
+    
+    .read-more {
+      display: inline-block;
+      color: #3e2093;
+      font-weight: 500;
+      margin-top: 15px;
+      text-decoration: none;
+    }
+    
+    .read-more:hover {
+      text-decoration: underline;
+    }
+    
+    /* Quick Links Section */
+    .quick-links {
+      background-color: #f8f9fa;
+      padding: 60px 0;
+    }
+    
+    .quick-links-container {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .quick-link-box {
+      flex-basis: 23%;
+      background: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: 0.5s;
+      margin-bottom: 20px;
+    }
+    
+    .quick-link-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .quick-link-box i {
+      font-size: 40px;
+      color: #3e2093;
+      margin-bottom: 15px;
+    }
+    
+    .quick-link-box h3 {
+      margin-bottom: 15px;
+    }
+    
+    .quick-link-btn {
+      display: inline-block;
+      background: #3e2093;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    
+    .quick-link-btn:hover {
+      background: #1a0065;
+    }
+    
+    /* Media query for responsive */
+    @media (max-width: 1200px) {
+      .quick-link-box {
+        flex-basis: 48%;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .course-col, .campus-col, .facilities-col, .mission-box, .vision-box {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+      }
+      
+      .text-box h1 {
+        font-size: 36px;
+      }
+      
+      .text-box p {
+        font-size: 16px;
+      }
+      
+      .quick-link-box {
+        flex-basis: 100%;
+      }
+    }
+    
+    @media (max-width: 700px) {
+      * {
+        overflow-x: hidden;
+      }
+      
+      #logo-img {
+        padding: 10px;
+      }
+      
+      .text-box h1 {
+        font-size: 30px;
+      }
+      
+      .text-box p {
+        font-size: 14px;
+      }
+      
+      .nav-links ul li {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+        padding-top: 50px;
+      }
+      
+      .nav-links a {
+        color: #fff;
+      }
+      
+      .icon {
+        display: block;
+        color: #3e2093;
+        margin: 10px;
+        font-size: 25px;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+      
+      .nav-links ul {
+        padding: 30px;
+      }
+      
+      .course-col:hover, .facilities-col img:hover {
+        box-shadow: none;
+        transform: none;
+      }
+      
+      .ctn h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="header">
+    <nav>
+      <a href="index.html"><img src="image/logo.png" id="logo-img" alt="ACNHS Logo"></a>
+      
+      <div class="nav-links" id="navLinks">
+        <span class="icon" onclick="hidemenu()">&#10005;</span>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="admission.html">Admission</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+          <li><a href="clinical.html">Clinical Training</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <span class="icon" onclick="showmenu()">&#9776;</span>
+    </nav>
+    
+    <div class="text-box">
+      <h1>Ayan College of Nursing and Health Sciences</h1>
+      <p>Excellence in Nursing Education and Healthcare Training</p>
+      <a href="admission.html" class="hero-btn">Admission Open 2023-2024</a>
+    </div>
+  </section>
+  
+  <!-- Quick Links Section -->
+  <section class="quick-links">
+    <div class="quick-links-container">
+      <div class="quick-link-box">
+        <i class="fa fa-graduation-cap"></i>
+        <h3>Programs</h3>
+        <p>Explore our nursing and healthcare programs</p>
+        <a href="programs.html" class="quick-link-btn">Learn More</a>
+      </div>
+      
+      <div class="quick-link-box">
+        <i class="fa fa-calendar"></i>
+        <h3>Admissions</h3>
+        <p>Apply now for the upcoming academic year</p>
+        <a href="admission.html" class="quick-link-btn">Apply Now</a>
+      </div>
+      
+      <div class="quick-link-box">
+        <i class="fa fa-users"></i>
+        <h3>Faculty</h3>
+        <p>Meet our experienced faculty members</p>
+        <a href="faculty.html" class="quick-link-btn">View Faculty</a>
+      </div>
+      
+      <div class="quick-link-box">
+        <i class="fa fa-hospital-o"></i>
+        <h3>Clinical Training</h3>
+        <p>Learn about our clinical partnerships</p>
+        <a href="clinical.html" class="quick-link-btn">Discover</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Mission and Vision Section -->
+  <section class="mission-vision">
+    <h1>Our Mission & Vision</h1>
+    <div class="row">
+      <div class="mission-box">
+        <h2>Our Mission</h2>
+        <p>To provide exceptional nursing education that prepares competent, compassionate, and ethical healthcare professionals dedicated to serving diverse communities with excellence and integrity.</p>
+      </div>
+      
+      <div class="vision-box">
+        <h2>Our Vision</h2>
+        <p>To be a premier institution of nursing education recognized for innovation, leadership, and excellence in preparing healthcare professionals who make a significant difference in global health outcomes.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!--Course of College-->
+  <section class="course" id="course_call">
+    <h1>Programs We Offer</h1>
+    <p>We are offering the following accredited programs:</p>
+    
+    <div class="row">
+      <div class="course-col">
+        <h2>BSN (Bachelor of Science in Nursing)</h2>
+        <p>Our four-year BSN program provides comprehensive nursing education with a strong foundation in theory, clinical practice, and research. Graduates are prepared for RN licensure and diverse nursing roles.</p>
+      </div>
+      
+      <div class="course-col">
+        <h2>Post-RN BSN</h2>
+        <p>Designed for registered nurses seeking to advance their education, this program builds on existing knowledge and experience to prepare nurses for leadership roles in healthcare.</p>
+      </div>
+      
+      <div class="course-col">
+        <h2>Nursing Assistant Program</h2>
+        <p>Our certificate program prepares students for entry-level positions in healthcare settings, providing essential skills in patient care under the supervision of registered nurses.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!--Campus Section-->
+  <section class="campus">
+    <h1>Our Campus</h1>
+    
+    <div class="row">
+      <div class="campus-col">
+        <img src="image/cm1.jfif" alt="ACNHS Campus Environment">
+        <div class="layer">
+          <h3>Learning Environment</h3>
+        </div>
+      </div>
+      
+      <div class="campus-col">
+        <img src="image/cm2.jfif" alt="ACNHS Student Community">
+        <div class="layer">
+          <h3>Student Community</h3>
+        </div>
+      </div>
+      
+      <div class="campus-col">
+        <img src="image/cm3.jfif" alt="ACNHS Education Facilities">
+        <div class="layer">
+          <h3>Education Excellence</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--Facilities Section-->
+  <section class="facilities">
+    <h1>Our Facilities</h1>
+    <p>State-of-the-art facilities designed for optimal learning experiences</p>
+    
+    <div class="row">
+      <div class="facilities-col">
+        <img src="image/canteen.jfif" alt="ACNHS Canteen">
+        <h3>Cafeteria</h3>
+        <p>Our campus cafeteria offers nutritious meals in a comfortable environment, supporting student health and well-being throughout their academic journey.</p>
+      </div>
+      
+      <div class="facilities-col">
+        <img src="image/auditorium.jfif" alt="ACNHS Auditorium">
+        <h3>Auditorium</h3>
+        <p>The college features a modern auditorium with advanced audio-visual technology, hosting seminars, conferences, and student events throughout the year.</p>
+      </div>
+      
+      <div class="facilities-col">
+        <img src="image/hostel.jfif" alt="ACNHS Hostel">
+        <h3>Student Residence</h3>
+        <p>Safe and comfortable hostel accommodations with modern amenities, creating a supportive living-learning environment for our students.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Nursing Skills Lab Section -->
+  <section class="facilities">
+    <h1>Specialized Training Facilities</h1>
+    <p>Our advanced simulation labs provide realistic clinical training environments</p>
+    
+    <div class="row">
+      <div class="facilities-col">
+        <img src="https://placehold.co/600x400/3e2093/FFFFFF?text=Nursing+Simulation+Lab" alt="Nursing Simulation Lab">
+        <h3>Simulation Lab</h3>
+        <p>High-fidelity simulation manikins and equipment allow students to practice clinical skills in a safe, controlled environment before working with real patients.</p>
+      </div>
+      
+      <div class="facilities-col">
+        <img src="https://placehold.co/600x400/3e2093/FFFFFF?text=Anatomy+Lab" alt="Anatomy Lab">
+        <h3>Anatomy & Physiology Lab</h3>
+        <p>Fully equipped laboratory with models, charts, and technology to enhance understanding of human anatomy and physiological processes.</p>
+      </div>
+      
+      <div class="facilities-col">
+        <img src="https://placehold.co/600x400/3e2093/FFFFFF?text=Computer+Lab" alt="Computer Lab">
+        <h3>Computer Laboratory</h3>
+        <p>Modern computer lab with access to nursing databases, research tools, and electronic health record systems used in healthcare settings.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!--Testimonials Section-->
+  <section class="testimonials">
+    <h1>What Our Students Say</h1>
+    <p>Hear from our current students and alumni about their experiences</p>
+    
+    <div class="row">
+      <div class="testimonial-col">
+        <img src="https://placehold.co/100x100/3e2093/FFFFFF?text=S" alt="Student">
+        <p>"The faculty at ACNHS are truly dedicated to student success. The hands-on clinical experience prepared me exceptionally well for my nursing career."</p>
+        <div class="name">Sarah Johnson, BSN Graduate</div>
+      </div>
+      
+      <div class="testimonial-col">
+        <img src="https://placehold.co/100x100/3e2093/FFFFFF?text=M" alt="Student">
+        <p>"The simulation labs provided invaluable experience that built my confidence before entering clinical rotations. I felt prepared and capable thanks to my training at ACNHS."</p>
+        <div class="name">Michael Chen, Current Student</div>
+      </div>
+      
+      <div class="testimonial-col">
+        <img src="https://placehold.co/100x100/3e2093/FFFFFF?text=A" alt="Student">
+        <p>"The Post-RN program allowed me to advance my career while continuing to work. The flexible scheduling and supportive faculty made balancing my responsibilities possible."</p>
+        <div class="name">Amanda Rodriguez, Post-RN Student</div>
+      </div>
+    </div>
+  </section>
+  
+  <!--News and Events Section-->
+  <section class="news-section">
+    <h1>News & Events</h1>
+    <p>Stay updated with the latest happenings at ACNHS</p>
+    
+    <div class="row">
+      <div class="facilities-col">
+        <div class="news-card">
+          <img src="https://placehold.co/600x400/3e2093/FFFFFF?text=White+Coat+Ceremony" alt="White Coat Ceremony">
+          <div class="news-content">
+            <div class="news-date">October 15, 2023</div>
+            <h3>Annual White Coat Ceremony</h3>
+            <p>Join us as we celebrate our nursing students' transition to clinical practice in our annual White Coat Ceremony.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="facilities-col">
+        <div class="news-card">
+          <img src="https://placehold.co/600x400/3e2093/FFFFFF?text=Community+Health+Fair" alt="Community Health Fair">
+          <div class="news-content">
+            <div class="news-date">November 5, 2023</div>
+            <h3>Community Health Fair</h3>
+            <p>Our students and faculty will provide free health screenings and education at the annual community health fair.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="facilities-col">
+        <div class="news-card">
+          <img src="https://placehold.co/600x400/3e2093/FFFFFF?text=Research+Symposium" alt="Research Symposium">
+          <div class="news-content">
+            <div class="news-date">December 10, 2023</div>
+            <h3>Nursing Research Symposium</h3>
+            <p>Presentations of student and faculty research projects addressing current healthcare challenges and innovations.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--Call To Action Section-->
+  <section class="ctn">
+    <h1>Begin Your Journey in Nursing Today</h1>
+    <a href="contact.html" class="hero-btn">CONTACT US</a>
+  </section>
+  
+  <!--Footer-->
+  <section class="footer">
+    <h4>About Us</h4>
+    <p>Ayan College of Nursing and Health Sciences is committed to excellence in nursing education, preparing competent healthcare professionals to meet the evolving needs of our communities.</p>
+    
+    <div class="social-icons">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-youtube"></i></a>
+    </div>
+    
+    <p>Contact Us: info@acnhs.edu.pk | +92-XXX-XXXXXXX</p>
+    <p>Address: College Road, Bhakkar, Punjab, Pakistan</p>
+    <p id="copyright">Made With ❤️ by Rehan Malik</p>
+  </section>
+  
+  <!--Javascript for Menu Toggle-->
+  <script>
+    var navLinks = document.getElementById("navLinks");
+    
+    function showmenu() {
+      navLinks.style.right = "0";
+    }
+    
+    function hidemenu() {
+      navLinks.style.right = "-200px";
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
